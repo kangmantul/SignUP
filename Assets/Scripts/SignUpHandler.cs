@@ -45,7 +45,6 @@ public class SignUpHandler : MonoBehaviour
         StartCoroutine(SendDatabase(json));
     }
 
-    [Serializable]
     public class SignUp_data
     {
         public string email;
@@ -62,7 +61,7 @@ public class SignUpHandler : MonoBehaviour
 
     IEnumerator SendDatabase (string jsonData)
     {
-        string url = ""; 
+        string url = "https://binusgat.rf.gd/unity-api-test/api/auth/signup.php"; 
 
         UnityWebRequest request = new UnityWebRequest(url, "POST");
         byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonData);
